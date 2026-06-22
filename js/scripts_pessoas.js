@@ -13,7 +13,7 @@ formPessoa.addEventListener('submit', (evt)=>{
     // criar um objeto formulario
     const dadosForm = new FormData(formPessoa)
 
-    // criar um ibjeto literal
+    // criar um objeto literal
     const pessoa = {
         nome: dadosFormPessoa.get('nome'),
         idade: dadosFormPessoa.get('idade'),
