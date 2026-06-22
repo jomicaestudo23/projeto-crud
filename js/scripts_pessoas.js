@@ -1,3 +1,5 @@
+// import6ando arquivos
+import { calcDesconto } from "./scripts_calculos.js"
 // pegando elementos do dom
 const formPessoa = document.querySelector('#form-pessoa')
 const divLista = document.querySelector('#div-lista-pessoas')
@@ -38,10 +40,19 @@ const listPessoas = () => {
     // limpando para listar pessoas no array
     divLista.innerHTML = ''
 
+    
+    ;
     // /percorrer o array pessoas com 0 foreach
     pessoas.forEach((elem, i) =>{
-        divLista.innerHTML += `${i + 1} - ${elem.nome}, ${elem.idade},
-         ${parseFloat(elem.renda).toFixed(2).replace('.',',')}<br>`
+        
+        const result = calcDesconto(elem)
+
+        divLista.innerHTML += `${i + 1} - Nome: ${elem.nome}<br>
+        Idade: ${elem.idade}<br>
+        Renda: ${parseFloat(elem.renda).toFixed(2).replace('.',',')}<br>
+        Desconto: ${calcDesconto(elem).toFixed(2).replace('.',',')}<br>
+        Resultado final: ${(elem.renda - result).toFixed(2).replace('.',',')}
+   `
     })
 }
 

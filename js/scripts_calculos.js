@@ -5,7 +5,7 @@ const calcDesconto = (objPessoa) =>{
     if((objPessoa.idade < 18 || objPessoa.renda <= 1700)){
         resultCalc = 'Isento de desconto'
     }else if(objPessoa.renda <= 5000){
-        resultCalc = objPessoa0.renda * 0.05
+        resultCalc = objPessoa.renda * 0.05
     }else if(objPessoa.renda <= 8000){
         resultCalc = objPessoa.renda * 0.10
     }else if(objPessoa.renda <= 12000){
@@ -15,3 +15,5 @@ const calcDesconto = (objPessoa) =>{
     }
     return resultCalc
 }
+
+export{calcDesconto}
