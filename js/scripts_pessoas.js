@@ -1,6 +1,6 @@
 // pegando elementos do dom
 const formPessoa = document.querySelector('#form-pessoa')
-const divLista = document.querySelector('#div-liosta-pessoa')
+const divLista = document.querySelector('#div-lista-pessoa')
 
 // criando o array pessoas
 const pessoas = []
@@ -20,5 +20,23 @@ formPessoa.addEventListener('submit', (evt)=>{
         renda: dadosFormPessoa.get('renda')
     }
 
+    // chamando a função addPessoa
+    addPessoa(pessoa)
+
 })
+// criando a função adicionar pessoa
+const addPessoa = (objPessoa) => {
+    pessoas.push(objPessoa)
+
+    listPessoas()
+}
+// função para listar pessoas no array
+const listPessoas = () => {
+
+    // /percorrer o array pessoas com 0 foreach
+    pessoas.forEach((elem, i) =>{
+        divLista.innerHTML += `${i} - ${elem.nome} - ${elem.idade},
+         ${elem.renda}<br>`
+    })
+}
 
