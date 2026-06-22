@@ -23,6 +23,9 @@ formPessoa.addEventListener('submit', (evt)=>{
     // chamando a função addPessoa
     addPessoa(pessoa)
 
+    // limpando o formulario
+    formPessoa.reset()
+
 })
 // criando a função adicionar pessoa
 const addPessoa = (objPessoa) => {
@@ -32,11 +35,13 @@ const addPessoa = (objPessoa) => {
 }
 // função para listar pessoas no array
 const listPessoas = () => {
+    // limpando para listar pessoas no array
+    divLista.innerHTML = ''
 
     // /percorrer o array pessoas com 0 foreach
     pessoas.forEach((elem, i) =>{
         divLista.innerHTML += `${i + 1} - ${elem.nome}, ${elem.idade},
-         ${elem.renda}<br>`
+         ${parseFloat(elem.renda).toFixed(2).replace('.',',')}<br>`
     })
 }
 
