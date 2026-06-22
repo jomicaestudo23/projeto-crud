@@ -1,6 +1,6 @@
 // pegando elementos do dom
 const formPessoa = document.querySelector('#form-pessoa')
-const divLista = document.querySelector('#div-lista-pessoa')
+const divLista = document.querySelector('#div-lista-pessoas')
 
 // criando o array pessoas
 const pessoas = []
@@ -11,7 +11,7 @@ formPessoa.addEventListener('submit', (evt)=>{
     evt.preventDefault()
 
     // criar um objeto formulario
-    const dadosForm = new FormData(formPessoa)
+    const dadosFormPessoa = new FormData(formPessoa)
 
     // criar um objeto literal
     const pessoa = {
@@ -35,7 +35,7 @@ const listPessoas = () => {
 
     // /percorrer o array pessoas com 0 foreach
     pessoas.forEach((elem, i) =>{
-        divLista.innerHTML += `${i} - ${elem.nome} - ${elem.idade},
+        divLista.innerHTML += `${i + 1} - ${elem.nome}, ${elem.idade},
          ${elem.renda}<br>`
     })
 }
